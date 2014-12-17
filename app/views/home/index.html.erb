@@ -1,0 +1,7 @@
+<div style="text-align:center;font-weight:bold;padding-top:25%;"><% if current_user %>
+Hi <%= current_user.email %>, Welcome to the banking app ! <br/>
+<%= link_to "Account Statement", account_statement_home_index_path %>
+<% else %>
+Hi Welcome, click <%= link_to('Login', new_user_session_path)  %>  to access the site !
+<% end %>
+</div>
