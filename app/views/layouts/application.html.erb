@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BankingApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>BankingApp</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-  <span style="float:right;">
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        	
-  </span>
-<% end %>
-<%= yield %>
+	
+	<% if user_signed_in? %>
+	<input type="hidden" id="current_user" value=true ></input>
+	<span style="float:right;">
+		<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        	
+	</span>
+	<% else %>
+	<input type="hidden" id="current_user" value=false ></input>
+	<% end %>
+	<%= yield %>
+
 
 </body>
 </html>

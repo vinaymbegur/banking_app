@@ -7,4 +7,9 @@ class HomeController < ApplicationController
 	def account_statement 
 
 	end
+
+  def credit_card
+
+  end
+
 end

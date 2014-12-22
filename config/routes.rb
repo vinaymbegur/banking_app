@@ -60,6 +60,7 @@ BankingApp::Application.routes.draw do
   resources :home do
     collection do
       get :account_statement
+      get :credit_card
     end
   end
 

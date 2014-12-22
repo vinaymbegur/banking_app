@@ -45,6 +45,3 @@ end
 gem 'debugger', group: [:development, :test]
 
 gem 'devise'
-
-gem 'ahoy_matey'
-gem 'activeuuid', '>= 0.5.0'

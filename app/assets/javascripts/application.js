@@ -13,5 +13,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require ahoy
 //= require_tree .
+
+
+function setCookie(key, value) {
+	var expires = new Date();
+	expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+	document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+}
+
+function getCookie(key) {
+	var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+	return keyValue ? keyValue[2] : null;
+}
+
+$(document).on('ready page:load', function () {
+	if($("#current_user").val() == "true" ){
+		setCookie('last_visit', window.location.pathname);
+		// alert(getCookie('last_visit'));
+	}
+});
